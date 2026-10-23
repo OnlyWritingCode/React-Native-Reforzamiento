@@ -2,20 +2,23 @@ import { BasicTypes } from "./typescript/BasicTypes";
 import { ObjectLiterals } from "./typescript/ObjectLiterals";
 import { BasicFunctions } from "./typescript/BasicFunctions";
 import { Counter } from "./components/Counter";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center h-svh">
-      <h1 className="text-3xl mb-5">React + TS</h1>
+    <AuthProvider>
+      <div className="flex flex-col justify-center items-center h-svh">
+        <h1 className="text-3xl mb-5">React + TS</h1>
 
-      <BasicTypes />
+        <BasicTypes />
 
-      <ObjectLiterals />
+        <ObjectLiterals />
 
-      <BasicFunctions />
+        <BasicFunctions />
 
-      <Counter />
-    </div>
+        <Counter />
+      </div>
+    </AuthProvider>
   );
 }
 
